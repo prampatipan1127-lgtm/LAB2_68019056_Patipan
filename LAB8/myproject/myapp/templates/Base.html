@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: #000000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== CONTENT ===== */
+        .content {
+            padding: 40px;
+            min-height: 70vh;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔵 Navbar บน -->
+    <div class="navbar">
+        <div class="logo">ICT12367 SPU</div>
+        <div>
+            <a href="{% url 'index' %}">หน้าแรก</a>
+            <a href="{% url 'about' %}">เกี่ยวกับเรา</a>
+            <a href="{% url 'form' %}">แบบฟอร์ม</a>
+        </div>
+    </div>
+
+    <!-- 🔵 Content -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- 🔵 Footer ล่าง -->
+    <div class="footer">
+        © 2026 ICT12367 SPU | Information Technology
+    </div>
+
+</body>
+</html>
